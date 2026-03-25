@@ -5,12 +5,12 @@ import penguinGif from '../assets/images/penguin-hello.gif';
 const HeroSection = () => {
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      
+
       {/* Wrapper to align children to the text's exact bounding box */}
       <div className="relative w-max h-full mx-auto flex flex-col justify-center">
-        
+
         {/* Name Text */}
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 100, scaleX: 0.9, scaleY: 0.9 }}
           animate={{ opacity: 1, y: 0, scaleX: 1, scaleY: 1.8 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
@@ -21,7 +21,7 @@ const HeroSection = () => {
         </motion.h1>
 
         {/* Navigation Links accurately pinned to the left edge of 'F' */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.2, duration: 1 }}
@@ -36,7 +36,7 @@ const HeroSection = () => {
         </motion.div>
 
         {/* Info Block accurately pinned to the right edge of 'Z' */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.2, duration: 1 }}
@@ -48,17 +48,26 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Down Indicator (Penguin) */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center z-20 pointer-events-none"
+        className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 pointer-events-none"
       >
-        <img 
+        <img
           src={penguinGif}
           alt="Penguin waving hello"
           className="w-24 md:w-32 h-auto object-contain mix-blend-difference"
         />
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          className="absolute top-[100%] mt-2 flex justify-center pointer-events-none"
+        >
+          <span className="text-portfolio-light font-bold text-3xl rotate-90 block">
+            {'>'}
+          </span>
+        </motion.div>
       </motion.div>
     </section>
   );
