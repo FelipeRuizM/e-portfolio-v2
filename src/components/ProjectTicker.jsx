@@ -19,7 +19,7 @@ const ProjectTicker = () => {
 
   return (
     <div 
-      className="w-full overflow-hidden bg-portfolio-accent text-portfolio-dark py-4 flex select-none"
+      className="w-full overflow-hidden bg-portfolio-light text-portfolio-dark py-4 flex select-none"
       ref={tickerContainerRef}
     >
       <div ref={tickerTextRef} className="flex whitespace-nowrap text-6xl md:text-8xl font-heading tracking-tighter uppercase shrink-0 transform-gpu">
