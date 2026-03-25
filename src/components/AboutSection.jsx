@@ -42,20 +42,20 @@ const AboutSection = () => {
         {/* Text Content (Left) */}
         <div className="w-full md:w-1/2 flex flex-col gap-8 text-portfolio-light font-body text-xl md:text-3xl leading-relaxed font-bold pl-6 md:pl-10">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim eget tellus id interdum. In hac habitasse platea dictumst. Vivamus tellus lacus, tincidunt ac aliquet eget, dictum vestibulum felis.
+            Hi, my name is Felipe Ruiz and I'm a Full-Stack Developer. My love for programming started back in 2019 when I watched some Python tutorials on YouTube, and I immediately became obsessed with all the possibilities available. It was so much fun solving problems by not only completing them but also trying to do it in the cleverest way possible, striving for excellence.
           </p>
           <p>
-            Pellentesque blandit facilisis lobortis. Ut efficitur ornare imperdiet. Pellentesque vitae ipsum vitae magna faucibus bibendum eu ac mi. Ut et enim ut ex bibendum ullamcorper nec vitae ante. Donec tortor augue, porta ac ultrices sit amet, consequat vel nibh.
+            This passion for coding has not only shaped my career but has also become my personal ikigai. I look forward to pushing the boundaries of what's possible in software development, collaborating with like-minded individuals, and contributing to innovative projects that make a difference in the world. Whether it's crafting elegant algorithms, building user-friendly interfaces, or architecting robust backend systems, I am committed to giving my best in every aspect of my work.
           </p>
           <p>
-            Aenean commodo, tellus in volutpat tristique, odio nisl feugiat nisi, vel interdum augue ipsum vel est. Proin sit amet hendrerit quam. Nam ultrices tristique odio, sit amet lobortis libero elementum in.
+            Lately, I've been involved with a handful of technologies:
           </p>
-          <p>
+          {/* <p>
             In iaculis mauris sed elit pellentesque, eget fermentum tortor condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
           </p>
           <p>
             Duis sagittis nisi mi, eget mattis sem semper quis. Integer lobortis nisi diam, quis commodo nisi gravida pellentesque. Praesent maximus justo massa, ut pretium felis varius pretium.
-          </p>
+          </p> */}
         </div>
 
         {/* 3D Head Container (Right - Sticky) */}
