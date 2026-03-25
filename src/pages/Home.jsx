@@ -1,17 +1,17 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
 import ProjectShowcase from '../components/ProjectShowcase';
-// import ProjectTicker from '../components/ProjectTicker';
-// import TransitionSection from '../components/TransitionSection';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
-    <main>
-      <HeroSection />
-      <ProjectShowcase />
-      {/* <ProjectTicker /> */}
-      {/* <TransitionSection /> */}
-    </main>
+    <>
+      <main>
+        <HeroSection />
+        <ProjectShowcase />
+      </main>
+      <Footer />
+    </>
   );
 };
 

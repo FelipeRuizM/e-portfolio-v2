@@ -1,51 +1,79 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const AboutSection = () => {
-  return (
-    <section id="about" className="min-h-screen py-32 px-6 sm:px-10 relative flex flex-col md:flex-row items-center justify-between gap-16 md:gap-24 overflow-hidden">
-      
-      {/* 3D Head Placeholder */}
-      <motion.div 
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        className="w-full md:w-1/2 max-w-xl aspect-square border-2 border-portfolio-light/10 rounded-full flex items-center justify-center relative overflow-hidden group cursor-grab active:cursor-grabbing"
-      >
-        <div className="absolute inset-0 bg-gradient-to-tr from-portfolio-accent/10 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
-        <p className="text-portfolio-accent/50 text-xs font-bold uppercase tracking-[0.2em] text-center px-10 select-none">
-          [ 3D Head Sequence / Photos Placeholder ]<br/><br/>
-          (Drag to spin)
-        </p>
-      </motion.div>
+  const containerRef = useRef(null);
 
-      <motion.div 
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="w-full md:w-1/2 flex flex-col justify-center"
-      >
-        <h2 className="text-[10vw] md:text-[8vw] leading-none mb-12 text-portfolio-light uppercase mix-blend-difference tracking-tighter">
-          Develop
-        </h2>
-        <div className="font-body text-lg md:text-2xl text-portfolio-light/70 space-y-8 max-w-2xl leading-relaxed">
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  // FULLSTACK goes right to left
+  const xTransformFullstack = useTransform(scrollYProgress, [0, 1], ["67%", "-80%"]);
+  // DEVELOPER goes left to right
+  const xTransformDeveloper = useTransform(scrollYProgress, [0, 1], ["-45%", "67%"]);
+
+  // Head Spin (Spins dynamically based on overall scroll velocity)
+  const rotateHead = useTransform(scrollYProgress, [0, 1], [0, 720]);
+
+  return (
+    <div ref={containerRef} className="w-full flex flex-col bg-portfolio-dark">
+      
+      {/* Top Parallax Typography Section */}
+      <section className="w-full pt-[43vh] pb-[15vh] flex flex-col gap-6 z-0 select-none overflow-hidden">
+        <motion.h2 
+          style={{ x: xTransformFullstack }}
+          className="text-[22vw] leading-[0.8] text-portfolio-light tracking-normal whitespace-nowrap mix-blend-difference"
+        >
+          FULLSTACK
+        </motion.h2>
+        <motion.h2 
+          style={{ x: xTransformDeveloper }}
+          className="text-[22vw] leading-[0.8] text-portfolio-accent tracking-normal whitespace-nowrap mix-blend-difference"
+        >
+          DEVELOPER
+        </motion.h2>
+      </section>
+
+      {/* Story Section */}
+      <section className="relative w-full px-6 sm:px-10 pb-40 flex flex-col md:flex-row items-stretch justify-between gap-12 md:gap-24 z-10 max-w-7xl mx-auto">
+        
+        {/* Text Content (Left) */}
+        <div className="w-full md:w-1/2 flex flex-col gap-8 text-portfolio-light font-body text-xl md:text-3xl leading-relaxed font-bold pl-6 md:pl-10">
           <p>
-            I'm a fullstack developer with a passion for building highly interactive, experimental web experiences that leave a lasting impression.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim eget tellus id interdum. In hac habitasse platea dictumst. Vivamus tellus lacus, tincidunt ac aliquet eget, dictum vestibulum felis.
           </p>
           <p>
-            I merge creative design with robust engineering, utilizing modern tools to push the boundaries of what's possible in the browser.
+            Pellentesque blandit facilisis lobortis. Ut efficitur ornare imperdiet. Pellentesque vitae ipsum vitae magna faucibus bibendum eu ac mi. Ut et enim ut ex bibendum ullamcorper nec vitae ante. Donec tortor augue, porta ac ultrices sit amet, consequat vel nibh.
+          </p>
+          <p>
+            Aenean commodo, tellus in volutpat tristique, odio nisl feugiat nisi, vel interdum augue ipsum vel est. Proin sit amet hendrerit quam. Nam ultrices tristique odio, sit amet lobortis libero elementum in.
+          </p>
+          <p>
+            In iaculis mauris sed elit pellentesque, eget fermentum tortor condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
+          </p>
+          <p>
+            Duis sagittis nisi mi, eget mattis sem semper quis. Integer lobortis nisi diam, quis commodo nisi gravida pellentesque. Praesent maximus justo massa, ut pretium felis varius pretium.
           </p>
         </div>
-        
-        <button className="mt-16 text-left text-portfolio-accent font-bold uppercase tracking-[0.2em] hover:text-white transition-colors flex items-center gap-6 group w-max border-none outline-none">
-          <div className="w-16 h-[2px] bg-portfolio-accent group-hover:bg-white group-hover:w-24 transition-all duration-300"></div>
-          Read my full story
-        </button>
-      </motion.div>
 
-    </section>
+        {/* 3D Head Container (Right - Sticky) */}
+        <div className="w-full md:w-1/2 relative hidden md:block">
+          <motion.div 
+            style={{ rotate: rotateHead }}
+            className="sticky top-[30vh] w-full max-w-xs mx-auto aspect-square flex items-center justify-center cursor-grab active:cursor-grabbing"
+          >
+            {/* Minimal Head Placeholder without glassmorphism overlay */}
+            <div className="absolute inset-0 bg-portfolio-accent/5 rounded-full blur-2xl"></div>
+            <p className="text-portfolio-accent text-lg font-bold uppercase tracking-widest text-center select-none z-10 border border-portfolio-accent/40 p-12 rounded-full">
+              [ Spinning<br/>3D Head ]
+            </p>
+          </motion.div>
+        </div>
+
+      </section>
+    </div>
   );
 };
 
