@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Navbar from './Navbar';
 import ProjectTicker from './ProjectTicker';
 import Footer from './Footer';
 
@@ -20,44 +21,60 @@ const ProjectLayout = ({ project, children }) => {
       transition={{ duration: 0.6 }}
       className="bg-portfolio-dark min-h-screen relative flex flex-col pt-32 w-full overflow-x-hidden"
     >
-      {/* Absolute Navbar mapped to global architectural conventions */}
-      <nav className="absolute top-0 left-0 w-full z-50 flex items-center justify-between p-6 sm:p-10 pointer-events-auto mix-blend-difference">
-        <div className="flex items-center gap-4">
-          <Link to="/" className="text-portfolio-light font-heading text-2xl md:text-3xl tracking-widest hover:text-portfolio-accent transition-colors">
-            F/R
-          </Link>
-          <span className="hidden md:block text-portfolio-accent font-bold tracking-tight text-sm uppercase">Full Stack Developer</span>
-        </div>
-        <div className="flex items-center gap-6 md:gap-10">
-          <Link to="/about" className="text-portfolio-accent font-bold font-body text-lg md:text-xl tracking-tight relative after:absolute after:-bottom-2 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-portfolio-accent after:transition-all after:duration-300 w-max">
-            About
-          </Link>
-          <Link 
-            to="/" 
-            onClick={() => setTimeout(() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }), 100)}
-            className="text-portfolio-accent font-bold font-body text-lg md:text-xl tracking-tight relative after:absolute after:-bottom-2 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-portfolio-accent after:transition-all after:duration-300 w-max"
-          >
-            Projects
-          </Link>
-        </div>
-      </nav>
+      {/* Standardized Abstracted Navbar Layout */}
+      <Navbar 
+        rightLinks={
+          <>
+            <Link to="/about" className="text-portfolio-accent font-bold font-body text-lg md:text-xl tracking-tight relative after:absolute after:-bottom-2 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-portfolio-accent after:transition-all after:duration-300 w-max">
+              About
+            </Link>
+            <Link 
+              to="/" 
+              onClick={() => setTimeout(() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }), 100)}
+              className="text-portfolio-accent font-bold font-body text-lg md:text-xl tracking-tight relative after:absolute after:-bottom-2 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-portfolio-accent after:transition-all after:duration-300 w-max"
+            >
+              Projects
+            </Link>
+          </>
+        }
+      />
 
-      {/* Repeating String Layout Ticker */}
-      <div className="w-[110vw] -rotate-3 -ml-[5vw] translate-y-20 relative z-0 opacity-80 mix-blend-difference pointer-events-none self-center">
-         <ProjectTicker 
-            title={project.title} 
-            className="bg-transparent" 
-            textClassName="text-portfolio-light/20 [-webkit-text-stroke:2px_#EDEDE8]" 
-         />
+      {/* Repeating Dual Ticker Layout */}
+      <div className="absolute top-10 left-0 w-[120vw] h-[60vh] -ml-[10vw] flex flex-col items-center justify-center overflow-hidden z-0 pointer-events-none">
+         
+         {/* Background Ticker (Outline, Tilted Down-Right, Moving Right) */}
+         <div className="w-full rotate-[4deg] absolute opacity-50 z-0">
+           <ProjectTicker 
+              title={project.title} 
+              className="bg-transparent" 
+              textClassName="text-transparent [-webkit-text-stroke:2px_#EDEDE8] md:[-webkit-text-stroke:4px_#EDEDE8]"
+              direction={1}
+              duration={70}
+           />
+         </div>
+
+         {/* Foreground Ticker (Solid, Tilted Up-Right, Moving Left) */}
+         <div className="w-full -rotate-[4deg] absolute mt-10 z-10">
+           <ProjectTicker 
+              title={project.title} 
+              className="bg-transparent" 
+              textClassName="text-portfolio-light"
+              direction={-1}
+              duration={70}
+           />
+         </div>
+
       </div>
 
       {/* Consistent Native Hero Graphic Structure */}
-      <div className="w-full h-[60vh] md:h-[80vh] px-6 md:px-20 relative z-10 mt-10 max-w-[120rem] mx-auto">
+      <div className="w-full h-[60vh] md:h-[80vh] relative z-10 mt-[40vh] md:mt-[50vh]">
         <img 
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover grayscale rounded-3xl opacity-90 shadow-2xl"
+          className="w-full h-full object-cover shadow-2xl"
         />
+        {/* 20% Black Filter Overlay */}
+        <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
       </div>
 
       <div className="py-32 px-6 sm:px-10 max-w-7xl mx-auto w-full z-10 flex flex-col text-left">
@@ -68,12 +85,6 @@ const ProjectLayout = ({ project, children }) => {
          <div className="mt-16 w-full flex flex-col gap-12">
             {children}
          </div>
-         
-         {/* Return Link Mechanism */}
-         <Link to="/" className="mt-24 text-left text-portfolio-accent font-bold uppercase tracking-[0.2em] hover:text-portfolio-light transition-colors flex items-center gap-6 group w-max border-none outline-none">
-            <div className="w-16 h-[2px] bg-portfolio-accent group-hover:bg-portfolio-light group-hover:w-24 transition-all duration-300"></div>
-            Return to Index
-         </Link>
       </div>
 
       <Footer />
