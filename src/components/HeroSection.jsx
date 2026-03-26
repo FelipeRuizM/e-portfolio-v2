@@ -25,7 +25,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.2, duration: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
           className="absolute bottom-20 left-0 flex flex-col md:flex-row gap-2 md:gap-6 z-20"
         >
           <Link to="/about" className="text-portfolio-accent font-bold font-body text-lg md:text-xl tracking-tight relative after:absolute after:-bottom-1 md:after:-bottom-2 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-portfolio-accent after:transition-all after:duration-300 w-max">
@@ -40,7 +40,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.2, duration: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
           className="absolute bottom-20 right-0 flex flex-col items-end z-20 text-right gap-0.5 md:gap-0"
         >
           <span className="text-portfolio-accent font-bold text-lg md:text-xl tracking-tight">
@@ -58,7 +58,7 @@ const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
+        transition={{ delay: 0.5, duration: 1 }}
         className="absolute bottom-64 md:bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 pointer-events-none"
       >
         <img

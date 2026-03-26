@@ -22,18 +22,31 @@ const AboutSection = () => {
       
       {/* Top Parallax Typography Section */}
       <section className="w-full pt-[43vh] pb-[15vh] flex flex-col gap-6 z-0 select-none overflow-hidden">
-        <motion.h2 
-          style={{ x: xTransformFullstack }}
-          className="text-[22vw] leading-[0.8] text-portfolio-light tracking-normal whitespace-nowrap mix-blend-difference"
+        <motion.div
+          initial={{ opacity: 0, x: '30vw' }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          FULLSTACK
-        </motion.h2>
-        <motion.h2 
-          style={{ x: xTransformDeveloper }}
-          className="text-[22vw] leading-[0.8] text-portfolio-accent tracking-normal whitespace-nowrap mix-blend-difference"
+          <motion.h2 
+            style={{ x: xTransformFullstack }}
+            className="text-[22vw] leading-[0.8] text-portfolio-light tracking-normal whitespace-nowrap mix-blend-difference"
+          >
+            FULLSTACK
+          </motion.h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: '-30vw' }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         >
-          DEVELOPER
-        </motion.h2>
+          <motion.h2 
+            style={{ x: xTransformDeveloper }}
+            className="text-[22vw] leading-[0.8] text-portfolio-accent tracking-normal whitespace-nowrap mix-blend-difference"
+          >
+            DEVELOPER
+          </motion.h2>
+        </motion.div>
       </section>
 
       {/* Story Section */}

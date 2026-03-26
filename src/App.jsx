@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 // import CustomCursor from './components/CustomCursor';
 import SplashCursor from './components/SplashCursor';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
@@ -31,6 +32,7 @@ const AnimatedRoutes = () => {
 function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <div className="min-h-screen relative selection:bg-portfolio-accent selection:text-portfolio-dark">
         {/* <CustomCursor /> */}
         <SplashCursor />
