@@ -24,7 +24,7 @@ const InventorySystem = () => {
 
         {/* 1. The TL;DR Wireframe Grid */}
         <section className="flex flex-col gap-12 border-t border-b border-portfolio-light/20 py-16">
-          <SectionHeader title="The TL;DR" num="01" />
+          <SectionHeader title="The Overview" num="01" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 font-body">
             <div className="md:col-span-3 text-2xl md:text-4xl leading-tight font-bold text-portfolio-light w-full md:w-3/4">
               A full-stack web application built in three months for Camosun College to manage thousands of electronic lab items.
@@ -47,27 +47,25 @@ const InventorySystem = () => {
         {/* 2 & 3. Problem & Solution Bento Box */}
         <section className="flex flex-col gap-12">
           <SectionHeader title="The Problem & Solution" num="02" />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+          <div className="flex flex-col gap-16 lg:gap-24">
             
-            {/* Context Block */}
-            <div className="flex flex-col gap-8 text-portfolio-light/80 text-lg md:text-xl leading-relaxed">
-              <p>
-                <strong className="text-portfolio-light text-2xl font-bold font-heading uppercase tracking-wide block mb-4">The Problem</strong> 
-                Camosun College lab assistants faced a massive organizational hurdle: keeping track of thousands of electronic components and equipment. Students had to physically walk to the labs just to ask if a piece of equipment was available. The manual process desperately needed a digital overhaul.
-              </p>
-              <img src={camosunImg} alt="Camosun College" className="w-full h-auto object-contain mt-4 grayscale hover:grayscale-0 transition-all duration-500 rounded-xl bg-portfolio-light/5" />
+            {/* Problem Block — text left, image right */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="text-portfolio-light/80 text-lg md:text-xl leading-relaxed">
+                <strong className="text-portfolio-light text-2xl font-heading uppercase tracking-wide block mb-4">The Problem</strong> 
+                <p>Camosun College lab assistants faced a massive organizational hurdle: keeping track of thousands of electronic components and equipment. Students had to physically walk to the labs just to ask if a piece of equipment was available. The manual process desperately needed a digital overhaul.</p>
+              </div>
+              <img src={camosunImg} alt="Camosun College" className="w-full h-auto object-contain rounded-xl bg-portfolio-light/5" />
             </div>
 
-            {/* Solution Block */}
-            <div className="flex flex-col gap-8 text-portfolio-light/80 text-lg md:text-xl leading-relaxed lg:mt-32">
-              <p>
-                <strong className="text-portfolio-light text-2xl font-bold font-heading uppercase tracking-wide block mb-4">The Solution</strong> 
-                Our three-person team built a custom, centralized Inventory System using a React frontend and a Node.js/Express.js API hooked up to MySQL.
-              </p>
-              <p>
-                I took ownership of the backend architecture. To hit our strict three-month deadline, we utilized Agile methodologies heavily (daily stand-ups, bi-weekly syncing). We engineered strict role-based access control, giving students a read-only live view while admins maintained full manual overrides.
-              </p>
-              <img src={agileImg} alt="Agile Methodology" className="w-full h-auto object-contain mt-4 opacity-80 mix-blend-screen" />
+            {/* Solution Block — text left, image right */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="flex flex-col gap-6 text-portfolio-light/80 text-lg md:text-xl leading-relaxed">
+                <strong className="text-portfolio-light text-2xl font-heading uppercase tracking-wide block mb-4">The Solution</strong> 
+                <p>Our three-person team built a custom, centralized Inventory System using a React frontend and a Node.js/Express.js API hooked up to MySQL.</p>
+                <p>I took ownership of the backend architecture. To hit our strict three-month deadline, we utilized Agile methodologies heavily (daily stand-ups, bi-weekly syncing). We engineered strict role-based access control, giving students a read-only live view while admins maintained full manual overrides.</p>
+              </div>
+              <img src={agileImg} alt="Agile Methodology" className="w-full h-auto object-contain mix-blend-screen rounded-xl" />
             </div>
 
           </div>
@@ -79,7 +77,7 @@ const InventorySystem = () => {
           <div className="relative z-10 flex flex-col lg:flex-row gap-16 items-center">
             <div className="flex-1 flex flex-col gap-8">
               <SectionHeader title="The Plot Twist" num="03" />
-              <p className="text-portfolio-light text-2xl md:text-3xl leading-snug font-bold font-heading uppercase">
+              <p className="text-portfolio-light text-2xl md:text-3xl leading-snug font-heading uppercase">
                 As development ramped up, it became heavily apparent that writing raw <span className="text-portfolio-accent">SQL queries</span> wasn't going to be geometrically scalable for our timeline.
               </p>
               <p className="text-portfolio-light/80 text-lg md:text-xl leading-relaxed">
@@ -103,7 +101,7 @@ const InventorySystem = () => {
               loop 
               muted 
               playsInline
-              className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
+              className="w-full h-full object-cover grayscale opacity-90 duration-700 pointer-events-none"
             ></video>
             <div className="absolute top-6 left-6 bg-portfolio-dark/90 px-6 py-3 font-body text-xs tracking-[0.2em] uppercase text-portfolio-accent rounded shadow-2xl backdrop-blur-md border border-portfolio-accent/20">
               Live Demo
@@ -112,19 +110,19 @@ const InventorySystem = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16 mt-8">
             <div className="flex flex-col gap-4">
-              <h4 className="text-3xl font-bold font-heading text-portfolio-light uppercase tracking-tight">Real-Time Inventory</h4>
+              <h4 className="text-3xl font-heading text-portfolio-light uppercase tracking-normal">Real-Time Inventory</h4>
               <p className="text-portfolio-light/70 text-lg leading-relaxed">Live mathematical updates on item status, precise quantity grids, and spatial locations.</p>
             </div>
             <div className="flex flex-col gap-4">
-              <h4 className="text-3xl font-bold font-heading text-portfolio-light uppercase tracking-tight">Sign-Outs & Returns</h4>
+              <h4 className="text-3xl font-heading text-portfolio-light uppercase tracking-normal">Sign-Outs & Returns</h4>
               <p className="text-portfolio-light/70 text-lg leading-relaxed">Tracking who borrowed what, expected return dates, and dynamic user interfaces to sign items back locally.</p>
             </div>
             <div className="flex flex-col gap-4">
-              <h4 className="text-3xl font-bold font-heading text-portfolio-light uppercase tracking-tight">Course Carts</h4>
+              <h4 className="text-3xl font-heading text-portfolio-light uppercase tracking-normal">Course Carts</h4>
               <p className="text-portfolio-light/70 text-lg leading-relaxed">A specialized feature allowing structural items to be checked out simultaneously in bulk mapped to generic labs and courses.</p>
             </div>
             <div className="flex flex-col gap-4">
-              <h4 className="text-3xl font-bold font-heading text-portfolio-light uppercase tracking-tight">Audit Trails</h4>
+              <h4 className="text-3xl font-heading text-portfolio-light uppercase tracking-normal">Audit Trails</h4>
               <p className="text-portfolio-light/70 text-lg leading-relaxed">A complete operational log of previous checkouts for rigorous accountability and tracking.</p>
             </div>
           </div>
@@ -133,14 +131,14 @@ const InventorySystem = () => {
         {/* Outro / Link */}
         <section className="w-full pt-16 pb-32 flex justify-center">
           <a 
-            href="#" 
+            href="https://github.com/FelipeRuizM/inventory-system" 
             target="_blank"
             rel="noopener noreferrer"
             className="group relative px-16 py-8 overflow-hidden rounded-full border border-portfolio-accent w-full md:w-auto text-center cursor-pointer"
           >
             <div className="absolute inset-0 bg-portfolio-accent scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.87,0,0.13,1)]"></div>
             <span className="relative z-10 text-portfolio-accent group-hover:text-portfolio-dark font-heading text-2xl md:text-4xl tracking-widest uppercase transition-colors duration-500">
-              Review Source Code [↗]
+              Review Source Code &lt;/&gt;
             </span>
           </a>
         </section>
