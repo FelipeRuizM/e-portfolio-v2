@@ -66,15 +66,18 @@ const HeroSection = () => {
           alt="Penguin waving hello"
           className="w-32 md:w-32 h-auto object-contain mix-blend-difference relative z-[10000]"
         />
-        <motion.div
+        <motion.button
+          onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="absolute top-[100%] mt-2 flex justify-center pointer-events-none"
+          className="absolute top-[100%] mt-2 flex justify-center pointer-events-auto cursor-pointer p-4"
         >
           <span className="text-portfolio-light font-bold text-3xl rotate-90 block">
             {'>'}
           </span>
-        </motion.div>
+        </motion.button>
       </motion.div>
     </section>
   );

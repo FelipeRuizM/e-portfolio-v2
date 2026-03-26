@@ -1,16 +1,47 @@
-# React + Vite
+# Felipe Ruiz - Interactive E-Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly experimental, brutalist-inspired interactive portfolio built with modern WebGL physics and complex scroll-linked typography overlays.
 
-Currently, two official plugins are available:
+## 🚀 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This application is a static Single Page Application (SPA) designed to showcase full-stack development work. It leverages aggressive visual aesthetics alongside complex matrix layouts—moving deliberately away from standard clean-corporate templates towards an artistic, visceral user experience.
 
-## React Compiler
+### Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Interactive WebGL Liquid Cursor**: Uses a highly modified 60fps GPU fluid dynamics fragment shader. It mathematically simulates dense, viscous acrylic paint (`mix-blend-multiply` and `difference`) reacting seamlessly to DOM bounds.
+- **Scroll-Linked Dual Typography**: Background tracking tickers mathematically accelerate directly mapped to the user’s global scroll velocity.
+- **Cross-Planar Layouts**: Parallax intersection components native to Framer Motion drive the horizontal Project Showcase dynamically translating native vertical window scrolling.
+- **Brutalist Mobile Architecture**: Fully distinct CSS geometric configurations via Tailwind breakpoints ensuring exact, absolute-grid alignment on both desktop and mobile viewports.
 
-## Expanding the ESLint configuration
+## 🛠️ Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Core Engine**: React 19 + Vite
+- **Styling**: Tailwind CSS v3
+- **Animation**: Framer Motion & GSAP
+- **Routing**: React Router v7 (`HashRouter` optimization for Static endpoints)
+- **Deployment**: Automated via GitHub Pages CLI
+
+## 🔧 Local Development
+
+1. Ensure you have Node.js installed.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the local Vite development server:
+   ```bash
+   npm run dev
+   ```
+
+## 📦 Deployment
+
+This repository is configured natively to compile and push directly to GitHub Pages. To deploy the newest build:
+
+```bash
+npm run deploy
+```
+(This triggers the Vite Production Compiler and hooks the resulting static payloads automatically to the `gh-pages` branch).
+
+## 🎨 Asset Structure
+
+- Project JSON matrices and routing mappings are encapsulated in `src/data/projects.js` to allow fast content iterations without shattering the core React components natively.
