@@ -3,9 +3,10 @@ import ProjectLayout from '../../components/ProjectLayout';
 import { projects } from '../../data/projects';
 import { motion } from 'framer-motion';
 
-import agileImg from '../../assets/images/agile.png';
-import camosunImg from '../../assets/images/camosun.png';
-import diagramImg from '../../assets/images/diagram.png';
+import agileImg from '../../assets/images/inventory-system/agile.png';
+import camosunImg from '../../assets/images/inventory-system/camosun.png';
+import diagramImg from '../../assets/images/inventory-system/diagram.png';
+import sequelizeImg from '../../assets/images/inventory-system/sequelize.jpg';
 import demoVideo from '../../assets/videos/inventory-demo-fast.mp4';
 
 const data = projects.find(p => p.id === 'inventory-system');
@@ -65,7 +66,7 @@ const InventorySystem = () => {
                 <p>Our three-person team built a custom, centralized Inventory System using a React frontend and a Node.js/Express.js API hooked up to MySQL.</p>
                 <p>I took ownership of the backend architecture. To hit our strict three-month deadline, we utilized Agile methodologies heavily (daily stand-ups, bi-weekly syncing). We engineered strict role-based access control, giving students a read-only live view while admins maintained full manual overrides.</p>
               </div>
-              <img src={agileImg} alt="Agile Methodology" className="w-full h-auto object-contain mix-blend-screen rounded-xl" />
+              <img src={diagramImg} alt="Diagram showing the relation between Node.js, MySQL, and React" className="w-full h-auto object-contain mix-blend-screen rounded-xl" />
             </div>
 
           </div>
@@ -85,7 +86,7 @@ const InventorySystem = () => {
               </p>
             </div>
             <div className="w-full lg:w-5/12 shrink-0">
-              <img src={diagramImg} alt="Architecture Diagram" className="w-full h-auto object-contain drop-shadow-2xl mix-blend-screen opacity-90" />
+              <img src={sequelizeImg} alt="Sequelize Diagram" className="w-full h-auto object-contain drop-shadow-2xl mix-blend-screen opacity-90 rounded-xl" />
             </div>
           </div>
         </section>

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import ppImage from '../assets/images/pp.jpeg';
+import ppImage from '../assets/images/about/pp.jpeg';
 
 // Scroll-driven word-by-word reveal component
 const RevealParagraph = ({ text }) => {

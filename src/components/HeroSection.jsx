@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import penguinGif from '../assets/images/penguin-hello.gif';
+import penguinGif from '../assets/images/hero/penguin-hello.gif';
 
 const HeroSection = () => {
   return (
