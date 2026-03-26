@@ -47,7 +47,7 @@ const ProjectLayout = ({ project, children }) => {
            <ProjectTicker 
               title={project.title} 
               className="bg-transparent" 
-              textClassName="text-transparent [-webkit-text-stroke:2px_#EDEDE8] md:[-webkit-text-stroke:4px_#EDEDE8]"
+              textClassName="text-transparent [-webkit-text-stroke:1px_#EDEDE8] md:[-webkit-text-stroke:1px_#EDEDE8]"
               direction={1}
               duration={70}
            />
@@ -67,14 +67,14 @@ const ProjectLayout = ({ project, children }) => {
       </div>
 
       {/* Consistent Native Hero Graphic Structure */}
-      <div className="w-full h-[60vh] md:h-[80vh] relative z-10 mt-[40vh] md:mt-[50vh]">
+      <div className="w-full h-[60vh] md:h-[80vh] relative z-[10000] mt-[40vh] md:mt-[50vh]">
         <img 
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover shadow-2xl"
+          className="w-full h-full object-cover shadow-2xl relative z-[10000]"
         />
         {/* 20% Black Filter Overlay */}
-        <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-black/30 pointer-events-none z-[10001]"></div>
       </div>
 
       <div className="py-32 px-6 sm:px-10 max-w-7xl mx-auto w-full z-10 flex flex-col text-left">

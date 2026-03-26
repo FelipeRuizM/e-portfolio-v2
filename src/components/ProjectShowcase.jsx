@@ -42,7 +42,7 @@ const ProjectShowcase = () => {
             <Link
               to={`/project/${project.id}`}
               key={idx}
-              className="relative w-[90vw] md:w-[85vw] h-[60vh] md:h-[70vh] shrink-0 group cursor-pointer overflow-hidden rounded-2xl border border-portfolio-light/10 block"
+              className="relative w-[90vw] md:w-[85vw] h-[60vh] md:h-[70vh] shrink-0 group cursor-pointer overflow-hidden rounded-2xl border border-portfolio-light/10 block z-[10000]"
             >
               <img
                 src={project.image}

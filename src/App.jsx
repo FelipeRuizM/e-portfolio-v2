@@ -1,7 +1,8 @@
 import React from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 
-import CustomCursor from './components/CustomCursor';
+// import CustomCursor from './components/CustomCursor';
+import SplashCursor from './components/SplashCursor';
 import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
@@ -31,7 +32,8 @@ function App() {
   return (
     <HashRouter>
       <div className="min-h-screen relative selection:bg-portfolio-accent selection:text-portfolio-dark">
-        <CustomCursor />
+        {/* <CustomCursor /> */}
+        <SplashCursor />
         <div className="grain-overlay"></div>
         <AnimatedRoutes />
       </div>

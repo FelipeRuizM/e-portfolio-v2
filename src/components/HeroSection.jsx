@@ -58,7 +58,7 @@ const HeroSection = () => {
         <img
           src={penguinGif}
           alt="Penguin waving hello"
-          className="w-24 md:w-32 h-auto object-contain mix-blend-difference"
+          className="w-24 md:w-32 h-auto object-contain mix-blend-difference relative z-[10000]"
         />
         <motion.div
           animate={{ y: [0, 10, 0] }}
