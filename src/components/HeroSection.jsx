@@ -26,12 +26,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="absolute bottom-20 left-0 flex flex-row gap-6 z-20"
+          className="absolute bottom-20 left-0 flex flex-col md:flex-row gap-2 md:gap-6 z-20"
         >
-          <Link to="/about" className="text-portfolio-accent font-bold font-body text-lg md:text-xl tracking-tight relative after:absolute after:-bottom-2 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-portfolio-accent after:transition-all after:duration-300 w-max">
+          <Link to="/about" className="text-portfolio-accent font-bold font-body text-lg md:text-xl tracking-tight relative after:absolute after:-bottom-1 md:after:-bottom-2 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-portfolio-accent after:transition-all after:duration-300 w-max">
             About
           </Link>
-          <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="text-portfolio-accent font-bold font-body text-lg md:text-xl tracking-tight relative after:absolute after:-bottom-2 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-portfolio-accent after:transition-all after:duration-300 w-max">
+          <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="text-portfolio-accent font-bold font-body text-lg md:text-xl tracking-tight relative after:absolute after:-bottom-1 md:after:-bottom-2 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-portfolio-accent after:transition-all after:duration-300 w-max">
             Projects
           </button>
         </motion.div>
@@ -41,10 +41,16 @@ const HeroSection = () => {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="absolute bottom-20 right-0 flex flex-col items-start z-20"
+          className="absolute bottom-20 right-0 flex flex-col items-end z-20 text-right gap-0.5 md:gap-0"
         >
-          <span className="text-portfolio-accent font-bold text-lg md:text-xl tracking-tight">Full Stack Developer</span>
-          <span className="text-portfolio-light font-bold text-lg md:text-xl tracking-tight self-end">Vancouver, Canada</span>
+          <span className="text-portfolio-accent font-bold text-lg md:text-xl tracking-tight">
+            <span className="md:hidden">Full Stack Dev</span>
+            <span className="hidden md:inline">Full Stack Developer</span>
+          </span>
+          <span className="text-portfolio-light font-bold text-lg md:text-xl tracking-tight">
+            <span className="md:hidden">Vancouver, CA</span>
+            <span className="hidden md:inline">Vancouver, Canada</span>
+          </span>
         </motion.div>
       </div>
 
@@ -53,12 +59,12 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 pointer-events-none"
+        className="absolute bottom-64 md:bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 pointer-events-none"
       >
         <img
           src={penguinGif}
           alt="Penguin waving hello"
-          className="w-24 md:w-32 h-auto object-contain mix-blend-difference relative z-[10000]"
+          className="w-40 md:w-32 h-auto object-contain mix-blend-difference relative z-[10000]"
         />
         <motion.div
           animate={{ y: [0, 10, 0] }}
