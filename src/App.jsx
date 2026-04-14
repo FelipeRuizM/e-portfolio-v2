@@ -12,14 +12,16 @@ import InventorySystem from './pages/projects/InventorySystem';
 import DCaveGame from './pages/projects/DCaveGame';
 import MomsStudy from './pages/projects/MomsStudy';
 import Ecommerce from './pages/projects/Ecommerce';
+import OnoPoke from './pages/projects/OnoPoke';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
-  
+
   return (
     <Routes location={location} key={location.pathname}>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
+      <Route path="/project/ono-poke-app" element={<OnoPoke />} />
       <Route path="/project/inventory-system" element={<InventorySystem />} />
       <Route path="/project/dcave-game" element={<DCaveGame />} />
       <Route path="/project/moms-study" element={<MomsStudy />} />
