@@ -9,7 +9,8 @@ import {
     OutroSection,
 } from '../../components/project';
 
-import demoVideo from '../../assets/videos/inventory-demo-fast.mp4'; 
+import demoVideo from '../../assets/videos/gym-visualizer-demo.mp4'; 
+import firebaseImg from '../../assets/images/gym-progress-visualizer/firebase.png'
 
 const data = projects.find(p => p.id === 'gym-visualizer');
 
@@ -33,16 +34,16 @@ const GymVisualizer = () => {
                         paragraphs: [
                             "The Hevy mobile app lacked deep, customizable desktop analytics. Tracking detailed historical volume trends and specific muscle splits required manually exporting and analyzing bulky CSV files, which was tedious and not scalable."
                         ],
-                        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop", 
-                        imageAlt: 'Manual CSV analysis in spreadsheets',
+                        image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2000&auto=format&fit=crop", 
+                        imageAlt: 'Gym and weights representing the workout data source',
                     }}
                     solution={{
                         title: 'The Solution',
                         paragraphs: [
-                            "I built a bespoke web dashboard designed with a 'Dark Mode First' premium aesthetic. It aggregates workout data, automatically maps exercises to muscle groups, and leverages dynamic filters (e.g., Last 30 Days) to compute and display actionable insights immediately."
+                            "Why pay for premium subscriptions to visualize data from over 3 months ago, when I can just build my own gym progress visualizer? So that's what I did. This is a free, open-source project that can be used by anyone who wants to see their gym progress."
                         ],
-                        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop", 
-                        imageAlt: 'Dashboard analytics solution',
+                        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop", 
+                        imageAlt: 'Modern data dashboard visualization',
                     }}
                 />
 
@@ -57,13 +58,14 @@ const GymVisualizer = () => {
                             The project originally relied on parsing local client-side CSV files. Moving to Firebase was tough because the data shape changed from flat CSV rows to heavily <span className="text-portfolio-accent font-bold">nested JSON structures</span>. I engineered a unified custom React hook equipped with adapter logic. It fetches raw Firestore documents and normalizes the nested JSON on-the-fly into a clean, strongly-typed schema. This abstraction ensured seamless data flow, allowing the complex Recharts components to render effortlessly.
                         </p>
                     }
-                    image="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop" 
-                    imageAlt="Firebase JSON coding architecture"
+                    image={firebaseImg} 
+                    imageAlt="Cloud Infrastructure representing Firebase integration"
                     imgClassName="mix-blend-normal rounded-xl border-4 border-portfolio-light/20"
                 />
 
                 <ResultsSection
                     video={demoVideo}
+                    showColor={true}
                     features={[
                         { title: 'Real-Time Firebase Sync', description: 'Live synchronization pushing the latest workout data directly to the client without manual refreshing.' },
                         { title: 'Interactive Recharts', description: 'Deep, dynamic interactions via custom Volume Area Charts and interactive Muscle-group Pie Charts.' },
