@@ -11,7 +11,7 @@ import {
 
 import demoVideo from '../../assets/videos/ono-poke-demo.mp4';
 import uptownImg from '../../assets/images/ono-poke/uptown.jpg';
-import whiteboard from '../../assets/images/ono-poke/whiteboard.png';
+import whiteboard from '../../assets/images/ono-poke/whiteboard.jpg';
 
 const data = projects.find(p => p.id === 'ono-poke-app');
 
